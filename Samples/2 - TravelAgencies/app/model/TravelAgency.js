@@ -23,10 +23,10 @@ Ext.define('App.model.TravelAgency', {
 
         proxy: {
             type: 'odata',
-            url: 'http://gw.esworkplace.sap.com/sap/opu/odata/IWBEP/RMTSAMPLEFLIGHT_2/TravelAgencyCollection',
-            withCredentials: true,
-            username: 'GW@ESW',
-            password: 'ESW4GW'
+            url: 'https://sapes1.sapdevcenter.com/sap/opu/odata/IWBEP/RMTSAMPLEFLIGHT_2/TravelAgencyCollection',
+            username: '...',
+            password: '...',
+            withCredentials: true
         }
     }
 });

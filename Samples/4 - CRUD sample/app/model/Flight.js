@@ -13,12 +13,13 @@
             type: 'string'
         }],
 
+        
         proxy: {
             type: 'odata',
-            withCredentials: true,
-            username: 'GW@ESW',
-            password: 'ESW4GW',
-            url: 'http://gw.esworkplace.sap.com/sap/opu/odata/IWBEP/RMTSAMPLEFLIGHT_2/FlightCollection'
+            url: 'https://sapes1.sapdevcenter.com/sap/opu/odata/IWBEP/RMTSAMPLEFLIGHT_2/FlightCollection',
+            username: '...',
+            password: '...',
+            withCredentials: true
         }
     }
 });

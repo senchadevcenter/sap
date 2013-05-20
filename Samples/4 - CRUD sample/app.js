@@ -21,9 +21,8 @@ Ext.application({
                 $filter: filter
             },
             callback: function (records) {
-                var flight = records[0];
-
-                var booking;
+                var flight = records[2],
+                    booking;
 
                 booking = Ext.create('App.model.Booking', {
                     AirLineID: flight.get('AirLineID'),
@@ -37,6 +36,18 @@ Ext.application({
                 booking.save(function (record, operation) {
                     if (operation.wasSuccessful()) {
                         console.log('Booking created. Id:' + record.get('BookingID'));
+
+                        // change an attribute and save
+                        booking.set('PassengerName', 'Tom Picard');
+                        booking.save(function () {
+                            console.log('Booking updated');
+
+                            // delete (i.e. cancel) the booking
+                            booking.erase(function () {
+                                console.log('Booking cancelled');
+                            });
+
+                        });
                     } else {
                         console.log('Create booking failed');
                     }
